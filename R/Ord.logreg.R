@@ -1,7 +1,6 @@
 Ord.logreg <-
 function(resp, Xs, nleaf, use.cv=TRUE, kfold=5, anneal.params) 
 {
- library(LogicReg)
  if(missing(anneal.params)) {anneal.params<-logreg.anneal.control(start=2, end=-1, iter=50000)}
  if(use.cv==FALSE) {CV<-"Cross-validation not used"}
  else {CV<-paste(kfold, "-fold cross-validation", sep="")}

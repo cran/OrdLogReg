@@ -12,7 +12,7 @@ Develops a classification model for ordinal responses.  A logic regression trees
 \tabular{ll}{
 Package: \tab OrdLogReg\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 1.1\cr
 Date: \tab 2013-04-12\cr
 License: \tab GPL-2\cr
 }
@@ -24,6 +24,7 @@ Bethany Wolf
 Maintainer: Bethany Wolf <wolfb@musc.edu>
 }
 
+\references{Wolf B.J., Slate E.H., Hill E.G. (2014).  Ordinal Logic Regression:  a classifier for discovering logical combinations of binary markers for ordinal outcomes.  Computational Statistics and Data Analysis.}
 
 \keyword{ package }
 

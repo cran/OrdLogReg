@@ -27,13 +27,13 @@ stop("x is not of class Ord.logreg")
    }
   if(cat>4)
    {
-   par(mfrow=c(2,2))
+   par(mfrow=c(2,2), ask=TRUE)
    for (i in 1:4)
      {
      plot(model[[i]], title=FALSE)
      mtext(paste("Category", i, "Model"), side=3, line=1)
      }
-    x11()
+    plot.new()
     par(mfrow=c(2,2))
     for(j in 5:cat)
      {
@@ -44,9 +44,10 @@ stop("x is not of class Ord.logreg")
  }
  if (one.plot==FALSE)
   {
+  par(ask=TRUE)
   for (i in 1:cat)
      {
-     x11()
+     plot.new()
      plot(model[[i]], title=FALSE)
      mtext(paste("Category", i, "Model"), side=3, line=1)
      }

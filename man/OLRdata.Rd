@@ -20,4 +20,3 @@ Note, Y was also simulated such that 10\% of the time it did not correctly match
 data(OLRdata)
 }
 \keyword{datasets}
-

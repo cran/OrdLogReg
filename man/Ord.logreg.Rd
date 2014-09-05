@@ -63,14 +63,17 @@ data(OLRdata)
 #typically >25000 would be used for the annealing algorithm.  
 #Number of iterations here is set to 2500 for faster run time
 #Fitting model without cross-validation
-OLRmod1<-Ord.logreg(resp=OLRdata$Y, Xs=OLRdata[,c(1:50)], use.cv=FALSE, anneal.params=logreg.anneal.control(start=1, end=-2, iter=2500))
+cont<-logreg.anneal.control(start=1, end=-2, iter=2500)
+Xs<-OLRdata[,c(1:50)]
+Ys<-OLRdata$Y
+OLRmod1<-Ord.logreg(resp=Ys, Xs=Xs, use.cv=FALSE, anneal.params=cont)
 print(OLRmod1)
 
-#Fitting a model without cross-validation but setting the maximum number of leaves in each tree
-OLRmod2<-Ord.logreg(resp=OLRdata$Y, Xs=OLRdata[,c(1:50)], nleaf=c(3,4,3), use.cv=FALSE, anneal.params=logreg.anneal.control(start=1, end=-2, iter=2500))
+#Fitting a model without cross-validation but setting the maximum number of leaves per tree
+OLRmod2<-Ord.logreg(resp=Ys, Xs=Xs, nleaf=c(3,4,3), use.cv=FALSE, anneal.params=cont)
 print(OLRmod2)
 
 #Fitting model with cross-validation
-OLRmod3<-Ord.logreg(resp=OLRdata$Y, Xs=OLRdata[,c(1:50)], use.cv=TRUE, anneal.params=logreg.anneal.control(start=1, end=-2, iter=2500))
+OLRmod3<-Ord.logreg(resp=Ys, Xs=Xs, use.cv=TRUE, anneal.params=cont)
 print(OLRmod3)
 }
